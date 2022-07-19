@@ -35,7 +35,16 @@
     {{- partial "resources/css.html" . -}}
 
     {{ if (.Scratch.Get "params").ga_code }}
-        {{ template "_internal/google_analytics_async.html" . }}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJXJL083W7"></script>
+    <script>
+        console.log("::Visual Partner-Ship::");
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CJXJL083W7');
+    </script>
     {{ end }}
 
     {{/*  Dark theme: inline in `head` to avoid FOUC  */}}
